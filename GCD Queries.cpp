@@ -37,3 +37,5 @@ int main(){
     }
 	return 0;
 }
+
+// Time Complexity: O(T*n) T is negligible as Sum of N over all the test cases will be less than or equal to 106
