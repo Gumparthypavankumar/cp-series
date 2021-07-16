@@ -11,7 +11,7 @@ void generate(vector<int> &subsets, int index, vector<int> &nums)
             algorithm:
              start with empty array
             step1 : iterate through array
-            step2 : In each iteration consider the element or not consider the element
+            step2 : In each iteration consider the element or don't consider the element
             
                          []
                 /                  \

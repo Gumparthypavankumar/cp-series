@@ -7,6 +7,9 @@ const double N = 1e-7;
 
 double findSquareRoot(double n)
 {
+    /*
+        Since the range between 1 to n is monotonic(following some sequence) we can use binary search to search for an element that turns out to be the square root of a given number
+    */
     double low = 0, high = n, mid;
     while (high - low > N)
     {
