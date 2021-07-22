@@ -22,23 +22,19 @@ const int M = 1e9 + 7;
         3^1 = 3 * 3^0 when you reach return 1
 */
 
-int binaryExponentiation(int a, int b)
-{
-    if (b == 0)
-    {
+int binaryExponentiation(int a, int b) {
+    if (b == 0) {
         return 1;
     }
     int res = binaryExponentiation(a, b / 2);
     // check if power is odd
-    if (b & 1)
-    {
+    if (b & 1) {
         return (a * ((res * 1LL * res) % M)) % M; // 1LL represent long number since the (int * int) may result in large number which might lead to overflows long long will be able to handle
     }
     return (res * res) % M;
 }
 
-int main()
-{
+int main() {
     int a, b;
     cin >> a >> b;
     int result = binaryExponentiation(a, b);

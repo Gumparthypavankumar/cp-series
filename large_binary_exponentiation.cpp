@@ -26,13 +26,10 @@ int binaryMultiply(long long, long long); // Function Declaration
            a = 24 -> b&1 -> true -> ans = 15 + 24 = 39 -> a = 24 + 39 = 63 (b = 0000)  
            break and return ans (i.e 39 which is indeed 3 * 13)
 */
-int binaryExp(int a, int b)
-{
+int binaryExp(int a, int b) {
     int ans = 1;
-    while (b > 0)
-    {
-        if (b & 1)
-        {
+    while (b > 0) {
+        if (b & 1) {
             ans = binaryMultiply(ans, a);
         }
         a = binaryMultiply(a, a);
@@ -41,13 +38,10 @@ int binaryExp(int a, int b)
     return ans;
 }
 
-int binaryMultiply(long long a, long long b)
-{
+int binaryMultiply(long long a, long long b) {
     int ans = 0;
-    while (b > 0)
-    {
-        if (b & 1)
-        {
+    while (b > 0) {
+        if (b & 1) {
             ans = (ans + a) % M;
         }
         a = (a + a) % M;
@@ -56,8 +50,7 @@ int binaryMultiply(long long a, long long b)
     return ans;
 }
 
-int main()
-{
+int main() {
     int a, b;
     cin >> a >> b;
     cout << binaryExp(a, b) << "\n";

@@ -2,16 +2,12 @@
 
 using namespace std;
 
-vector<vector<int>> subsets(vector<int> &nums)
-{
+vector<vector<int>> subsets(vector<int> &nums) {
     vector<vector<int>> ans;
-    for (int i = 0; i < (1 << nums.size()); i++)
-    {
+    for (int i = 0; i < (1 << nums.size()); i++) {
         vector<int> temp;
-        for (int j = 0; j < nums.size(); j++)
-        {
-            if (i & (1 << j))
-            {
+        for (int j = 0; j < nums.size(); j++) {
+            if (i & (1 << j)) {
                 temp.push_back(nums[j]);
             }
         }
@@ -19,23 +15,19 @@ vector<vector<int>> subsets(vector<int> &nums)
     }
     return ans;
 }
-int main()
-{
+int main() {
     int n;
     cin >> n;
     vector<int> nums;
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         int k;
         cin >> k;
         nums.push_back(k);
     }
     vector<vector<int>> result = subsets(nums);
-    for (auto subset : result)
-    {
+    for (auto subset : result) {
         cout << "[";
-        for (auto elem : subset)
-        {
+        for (auto elem : subset) {
             cout << elem << ",";
         }
         cout << "]"

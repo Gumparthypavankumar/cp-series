@@ -14,45 +14,33 @@ int trees[N];
         mid is what we are passing as height in every iteration
 */
 
-bool isWoodSufficient(int height)
-{
+bool isWoodSufficient(int height) {
     long long wood = 0;
-    for (int i = 0; i < n; i++)
-    {
-        if (trees[i] >= height)
-        {
+    for (int i = 0; i < n; i++) {
+        if (trees[i] >= height) {
             wood += (trees[i] - height);
         }
     }
     return wood >= m;
 }
 
-int main()
-{
+int main() {
     cin >> n >> m;
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         cin >> trees[i];
     }
     int low = 0, high = 1e9, mid;
-    while (high - low > 1)
-    {
+    while (high - low > 1) {
         mid = (high + low) / 2;
-        if (isWoodSufficient(mid))
-        {
+        if (isWoodSufficient(mid)) {
             low = mid;
-        }
-        else
-        {
+        } else {
             high = mid - 1;
         }
     }
-    if (isWoodSufficient(high))
-    {
+    if (isWoodSufficient(high)) {
         cout << high << endl;
-    }
-    else
-    {
+    } else {
         cout << low << endl;
     }
     return 0;

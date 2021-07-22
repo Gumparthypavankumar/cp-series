@@ -4,8 +4,7 @@ using namespace std;
 
 vector<vector<int>> allSubsets;
 
-void generate(vector<int> &subsets, int index, vector<int> &nums)
-{
+void generate(vector<int> &subsets, int index, vector<int> &nums) {
     /*
             given = [1,2,3]
             algorithm:
@@ -22,8 +21,7 @@ void generate(vector<int> &subsets, int index, vector<int> &nums)
       [1,2,3] [1,2] [1,3] [1] [2,3] [2] [3] [] // subsets
     */
 
-    if (index == nums.size())
-    {
+    if (index == nums.size()) {
         allSubsets.push_back(subsets);
         return;
     }
@@ -36,29 +34,24 @@ void generate(vector<int> &subsets, int index, vector<int> &nums)
     generate(subsets, index + 1, nums);
     subsets.pop_back();
 }
-vector<vector<int>> subsets(vector<int> &nums)
-{
+vector<vector<int>> subsets(vector<int> &nums) {
     vector<int> empty;
     generate(empty, 0, nums);
     return allSubsets;
 }
-int main()
-{
+int main() {
     int n;
     cin >> n;
     vector<int> nums;
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         int k;
         cin >> k;
         nums.push_back(k);
     }
     vector<vector<int>> result = subsets(nums);
-    for (auto subset : result)
-    {
+    for (auto subset : result) {
         cout << "[";
-        for (auto elem : subset)
-        {
+        for (auto elem : subset) {
             cout << elem << ",";
         }
         cout << "]"

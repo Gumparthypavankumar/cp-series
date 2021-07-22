@@ -4,8 +4,7 @@ using namespace std;
 /*
 
 */
-long long findGCD(long long a, long long b)
-{
+long long findGCD(long long a, long long b) {
     /*
         using continous division
         Ex: 6)12(2
@@ -17,8 +16,7 @@ long long findGCD(long long a, long long b)
     return findGCD(b, a % b);
 }
 
-vector<long long> lcmAndGcd(long long A, long long B)
-{
+vector<long long> lcmAndGcd(long long A, long long B) {
     vector<long long> ans;
     /*
         LCM of 2 numbers is product of numbers divided with gcd of that 2 numbers
@@ -29,8 +27,7 @@ vector<long long> lcmAndGcd(long long A, long long B)
     return ans;
 }
 
-int main()
-{
+int main() {
     long long a, b;
     cin >> a >> b;
     vector<long long> result = lcmAndGcd(a, b);

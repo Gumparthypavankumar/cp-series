@@ -22,13 +22,10 @@ const int M = 1e9 + 7;
                      b = 0(0)
     0 & 1 -> false So answer is 27
 */
-int binaryExponentiation(int a, int b)
-{
+int binaryExponentiation(int a, int b) {
     int ans = 1;
-    while (b != 0)
-    {
-        if (b & 1)
-        {
+    while (b != 0) {
+        if (b & 1) {
             ans = (ans * 1LL * a) % M;
         }
         a = (a * 1LL * a) % M;
@@ -37,8 +34,7 @@ int binaryExponentiation(int a, int b)
     return ans;
 }
 
-int main()
-{
+int main() {
     int a, b;
     cin >> a >> b;
     cout << binaryExponentiation(a, b) << endl;

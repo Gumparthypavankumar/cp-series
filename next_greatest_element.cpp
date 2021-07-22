@@ -65,43 +65,35 @@ using namespace std;
 */
 
 // Next Greater Element using stack
-vector<int> NGE(vector<int> v)
-{
+vector<int> NGE(vector<int> v) {
     vector<int> ans(v.size());
     stack<int> st;
-    for (int i = 0; i < v.size(); i++)
-    {
-        while (!st.empty() && v[i] > v[st.top()])
-        {
+    for (int i = 0; i < v.size(); i++) {
+        while (!st.empty() && v[i] > v[st.top()]) {
             ans[st.top()] = i;
             st.pop();
         }
         st.push(i);
     }
-    while (!st.empty())
-    {
+    while (!st.empty()) {
         ans[st.top()] = -1;
         st.pop();
     }
     return ans;
 }
 
-int main()
-{
+int main() {
     int n;
     cin >> n;
     vector<int> v(n);
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         cin >> v[i];
     }
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         cout << v[i] << "\n";
     }
     vector<int> nge = NGE(v);
-    for (auto index : nge)
-    {
+    for (auto index : nge) {
         cout << (index != -1 ? v[index] : -1) << " ";
     }
     return 0;
