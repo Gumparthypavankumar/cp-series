@@ -8,7 +8,7 @@ using namespace std;
 
 int main(){
     /*
-        * we will use inbuilt gcd algorithm for efficient computation
+        we will use inbuilt gcd algorithm for efficient computation
     */
     int T;
     cin>>T;
